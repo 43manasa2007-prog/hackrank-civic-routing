@@ -1,0 +1,23 @@
+{
+  "dataset": "HackMysuru Civic Routing",
+  "status": "synthetic_demo_data",
+  "description": "Demo jurisdiction data for development. Replace with official boundary data before production use.",
+  "jurisdictions": [
+    {
+      "id": "J001",
+      "authority_type": "Municipal Corporation",
+      "authority_name": "Demo Municipal Authority",
+      "version": 1,
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-09-30"
+    },
+    {
+      "id": "J002",
+      "authority_type": "Town Panchayat",
+      "authority_name": "Demo Town Panchayat",
+      "version": 1,
+      "effective_from": "2026-01-01",
+      "effective_to": "2026-09-30"
+    }
+  ]
+}
