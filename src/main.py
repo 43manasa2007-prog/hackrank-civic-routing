@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from src.routing.router import route_complaint
+
+
 app = FastAPI(title="Civic Complaint Routing API")
 
 
@@ -9,6 +11,7 @@ class Complaint(BaseModel):
     issue_type: str
     latitude: float
     longitude: float
+    complaint_date: str | None = None
 
 
 @app.get("/")
@@ -24,7 +27,8 @@ def create_complaint(complaint: Complaint):
     result = route_complaint(
         complaint.issue_type,
         complaint.latitude,
-        complaint.longitude
+        complaint.longitude,
+        complaint.complaint_date
     )
 
     return result

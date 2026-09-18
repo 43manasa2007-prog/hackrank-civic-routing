@@ -49,3 +49,31 @@ def test_invalid_longitude():
 
     assert result["jurisdiction"] == "Manual Review"
     assert result["confidence"] == 0.0
+
+
+def test_jurisdiction_version_before_change():
+    result = route_complaint(
+        "blocked_drain",
+        12.2950,
+        76.6350,
+        "2026-09-15"
+    )
+
+    assert result["jurisdiction_id"] == "J001"
+    assert result["authority_name"] == "Demo Municipal Authority"
+    assert result["jurisdiction_version"] == 1
+    assert result["jurisdiction_confidence"] == 0.90
+
+
+def test_jurisdiction_version_after_change():
+    result = route_complaint(
+        "blocked_drain",
+        12.2950,
+        76.6350,
+        "2026-10-15"
+    )
+
+    assert result["jurisdiction_id"] == "J002"
+    assert result["authority_name"] == "Demo Town Panchayat"
+    assert result["jurisdiction_version"] == 2
+    assert result["jurisdiction_confidence"] == 0.90
