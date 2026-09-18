@@ -1,0 +1,52 @@
+{
+  "type": "FeatureCollection",
+  "name": "hackmysuru_demo_jurisdictions",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "jurisdiction_id": "J001",
+        "authority_name": "Demo Municipal Authority",
+        "authority_type": "Municipal Corporation",
+        "version": 1,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-09-30"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.6200, 12.2800],
+            [76.6500, 12.2800],
+            [76.6500, 12.3100],
+            [76.6200, 12.3100],
+            [76.6200, 12.2800]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "jurisdiction_id": "J002",
+        "authority_name": "Demo Town Panchayat",
+        "authority_type": "Town Panchayat",
+        "version": 1,
+        "effective_from": "2026-01-01",
+        "effective_to": "2026-09-30"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [76.6500, 12.2800],
+            [76.6800, 12.2800],
+            [76.6800, 12.3100],
+            [76.6500, 12.3100],
+            [76.6500, 12.2800]
+          ]
+        ]
+      }
+    }
+  ]
+}
