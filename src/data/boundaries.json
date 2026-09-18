@@ -1,0 +1,22 @@
+{
+    "wards": [
+        {
+            "ward_id": "W01",
+            "ward_name": "Demo Ward 1",
+            "jurisdiction": "MCC",
+            "min_lat": 12.3000,
+            "max_lat": 12.3100,
+            "min_lng": 76.6400,
+            "max_lng": 76.6600
+        },
+        {
+            "ward_id": "W02",
+            "ward_name": "Demo Ward 2",
+            "jurisdiction": "MCC",
+            "min_lat": 12.3100,
+            "max_lat": 12.3200,
+            "min_lng": 76.6600,
+            "max_lng": 76.6800
+        }
+    ]
+}
