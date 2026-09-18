@@ -1,0 +1,23 @@
+{
+  "test_case": "Jurisdiction change over time",
+  "description": "Demonstrates that the same location can be routed to different authorities depending on the effective date.",
+  "location": {
+    "latitude": 12.2950,
+    "longitude": 76.6350
+  },
+  "scenarios": [
+    {
+      "date": "2026-09-15",
+      "expected_jurisdiction": "J001",
+      "expected_authority": "Demo Municipal Authority",
+      "reason": "Version 1 is effective until 2026-09-30."
+    },
+    {
+      "date": "2026-10-15",
+      "expected_jurisdiction": "J002",
+      "expected_authority": "Demo Town Panchayat",
+      "reason": "Version 2 is expected to represent the changed jurisdiction after 2026-10-01."
+    }
+  ],
+  "note": "This is synthetic demo test data for the hackathon MVP. It is not official Mysuru jurisdiction data."
+}
