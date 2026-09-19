@@ -1,10 +1,23 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from src.routing.router import route_complaint
 
 
 app = FastAPI(title="Civic Complaint Routing API")
+
+
+# Allow the React frontend on Member 2's laptop
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class Complaint(BaseModel):
