@@ -1,30 +1,127 @@
 {
   "dataset": "HackMysuru Civic Routing",
-  "status": "synthetic_demo_data",
-  "description": "Demo jurisdiction data for development. Replace with official boundary data before production use.",
+  "status": "official_sources_researched_2026",
+  "description": "Mysuru jurisdiction reference data for HackMysuru 1.0. Current operational authorities are distinguished from the notified but not operational Greater Mysuru City Corporation.",
+  "effective_reference_date": "2026-09-19",
   "jurisdictions": [
     {
-      "id": "J001",
+      "id": "MYS-MCC",
       "authority_type": "Municipal Corporation",
-      "authority_name": "Demo Municipal Authority",
-      "version": 1,
-      "effective_from": "2026-01-01",
-      "effective_to": "2026-09-30"
+      "authority_name": "Mysuru City Corporation",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
     },
     {
-      "id": "J002",
-      "authority_type": "Town Panchayat",
-      "authority_name": "Demo Town Panchayat",
-      "version": 1,
-      "effective_from": "2026-01-01",
-      "effective_to": "2026-09-30"
+      "id": "MYS-HCMC",
+      "authority_type": "City Municipal Council",
+      "authority_name": "Hootagalli CMC",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
     },
     {
-      "id": "J002",
+      "id": "MYS-SRTP",
       "authority_type": "Town Panchayat",
-      "authority_name": "Demo Town Panchayat",
-      "version": 2,
-      "effective_from": "2026-10-01",
+      "authority_name": "Srirampura TP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-RMTP",
+      "authority_type": "Town Panchayat",
+      "authority_name": "Rammanahalli TP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-KDTP",
+      "authority_type": "Town Panchayat",
+      "authority_name": "Kadakola TP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-BGTP",
+      "authority_type": "Town Panchayat",
+      "authority_name": "Bogadi TP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-CHGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Chamundi Hill GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-AAGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Alanahalli GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-SIGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Siddalingapura GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-YWGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Yelwal GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-DNGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Dhanagalli GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-MBGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Mallahalli-Beerihundi GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-NGGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Nagawala GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-NNGP",
+      "authority_type": "Gram Panchayat",
+      "authority_name": "Naganahalli GP",
+      "operational_status": "CURRENT_OPERATIONAL",
+      "effective_from": null,
+      "effective_to": null
+    },
+    {
+      "id": "MYS-GMCC",
+      "authority_type": "Greater Municipal Corporation",
+      "authority_name": "Greater Mysuru City Corporation",
+      "operational_status": "NOTIFIED_NOT_OPERATIONAL",
+      "effective_from": "2026-01-01",
       "effective_to": null
     }
   ]

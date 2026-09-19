@@ -1,23 +1,26 @@
 {
-  "test_case": "Jurisdiction change over time",
-  "description": "Demonstrates that the same location can be routed to different authorities depending on the effective date.",
-  "location": {
-    "latitude": 12.2950,
-    "longitude": 76.6350
-  },
+  "test_case": "Mysuru 2026 current-versus-notified jurisdiction",
+  "description": "Tests that the routing system uses the current operational authority for present-day routing while retaining the notified Greater Mysuru City Corporation status as transition information.",
+  "reference_date": "2026-09-19",
   "scenarios": [
     {
-      "date": "2026-09-15",
-      "expected_jurisdiction": "J001",
-      "expected_authority": "Demo Municipal Authority",
-      "reason": "Version 1 is effective until 2026-09-30."
+      "scenario_id": "CURRENT_MCC",
+      "expected_status": "CURRENT_OPERATIONAL",
+      "expected_authority": "Mysuru City Corporation",
+      "reason": "Mysuru City Corporation is the current operating municipal authority for its present jurisdiction."
     },
     {
-      "date": "2026-10-15",
-      "expected_jurisdiction": "J002",
-      "expected_authority": "Demo Town Panchayat",
-      "reason": "Version 2 is expected to represent the changed jurisdiction after 2026-10-01."
+      "scenario_id": "CURRENT_EXPANSION_AREA",
+      "expected_status": "CURRENT_OPERATIONAL",
+      "expected_authority": "VERIFY_FROM_LOCALITY_MAPPING",
+      "reason": "An expansion-area locality must be routed using its current operational local authority rather than automatically treating the notified Greater Mysuru City Corporation as operational."
+    },
+    {
+      "scenario_id": "FUTURE_GMCC",
+      "expected_status": "NOTIFIED_NOT_OPERATIONAL",
+      "expected_authority": "Greater Mysuru City Corporation",
+      "reason": "The Greater Mysuru City Corporation record is retained as a notified/future transition authority and must not be treated as the current operating authority without an effective operational status."
     }
   ],
-  "note": "This is synthetic demo test data for the hackathon MVP. It is not official Mysuru jurisdiction data."
+  "note": "This test file is for application testing. Exact locality-level expected authorities should be taken from the MySQL jurisdiction mapping rather than invented coordinates."
 }
