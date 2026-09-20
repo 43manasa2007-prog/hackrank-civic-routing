@@ -1,104 +1,132 @@
-# `<Project Name>` — `<one-line tagline>`
-
-> HackMysuru 1.0 · Phase 1 · Civic Governance & Clean Mysuru
-> Team `<Team Name>` (`<Team ID>`)
-
-| 📎 Submission links | 📋 Templates | 🏗️ Architecture | 🛡️ Hard constraints | ⚙️ Setup | 🤖 AI usage | ⚠️ Limitations |
-|---|---|---|---|---|---|---|
-| [resource.md](./resource.md) | [resource-templates/](./resource-templates/) | [docs/architecture.md](./docs/architecture.md) | [docs/constraints.md](./docs/constraints.md) | [docs/setup.md](./docs/setup.md) | [ai.md](./ai.md) | [docs/limitations.md](./docs/limitations.md) |
-
-<!--
-This README is the overview. Detailed content lives in the linked files so each stays short.
-Keep the section ORDER below. Reviewers look for each section in the same place in every repo.
--->
-
----
+# SAMAGRA MYSURU
 
 ## 1. Problem Understanding
 
-<!-- Which sub-problem did you pick and WHY that one? 5–8 sentences. -->
+### Chosen sub-problem
+**Routing**
 
-**Chosen sub-problem:** `<e.g. Routing>`
+### The gap we saw
 
-- **The gap we saw:** `<What actually goes wrong today, in Mysuru terms>`
-- **Why it matters:** `<Consequence: delay, bounced complaints, lost trust, health risk>`
-- **Why we chose this over the others:** `<Your reasoning>`
-- **What "solved" looks like for us:** `<A measurable outcome, e.g. "a citizen never has to pick an office">`
+Mysuru citizens may not always know which civic authority is responsible for a particular issue at a particular location. This becomes more challenging during the 2026 Mysuru jurisdiction transition, where the existing MCC area is being considered alongside surrounding municipal, town panchayat and gram panchayat areas.
+
+A complaint can therefore reach the wrong office or require manual identification of the responsible authority before action can begin.
+
+### Why it matters
+
+Incorrect routing can result in:
+
+- Delayed complaint handling
+- Complaints being transferred between offices
+- Additional effort for citizens and officials
+- Difficulty identifying responsibility in boundary areas
+- Reduced visibility of the complaint's current destination
+
+### Why we chose Routing
+
+We chose Routing because identifying the correct authority is a fundamental step between receiving a civic complaint and getting it to the appropriate department.
+
+Our solution focuses specifically on making this routing process structured and location-aware while accounting for Mysuru's changing jurisdiction structure.
+
+### What "solved" looks like for us
+
+A citizen should be able to submit a complaint without needing to know which civic office is responsible.
+
+The system should use the complaint's location and issue type to identify the applicable jurisdiction, authority and department, and provide a clear routing result.
+
+---
 
 ## 2. Target Users & Mysuru Context
 
 | User | Their situation | What they need from us |
 |---|---|---|
-| `<Resident in a ward at the MCC–panchayat edge>` | `<No idea which office owns the drain; patchy 4G>` | `<Report once, see who owns it, see status>` |
-| `<Panchayat / MCC officer>` | `<...>` | `<...>` |
-| `<Sanitation / field worker>` | `<Basic Android phone, low data>` | `<...>` |
+| Resident / Citizen | May not know which authority is responsible for an issue at their location | Submit a complaint once and receive the appropriate routing information |
+| MCC / Local Authority Officer | Receives complaints that may belong to different jurisdictions or departments | Clearly identify which authority and department should handle the complaint |
+| Department / Field Worker | Needs location and issue information to understand where the complaint belongs | Receive structured complaint routing information |
+| Project Administrator | Needs to maintain changing jurisdiction and routing information | Manage authorities, wards, localities, departments and routing rules |
 
-**Local context we designed for:** `<jurisdiction overlap, connectivity, Kannada/English, device types, literacy>`
+### Local context we designed for
 
-## 3. Solution Overview
+SAMAGRA MYSURU is designed around the specific civic and administrative context of Mysuru.
 
-<!-- Plain language. A non-engineer should follow this. -->
+The system considers:
 
-`<2–4 sentence summary>`
+- The existing **65 MCC wards**
+- The 2026 Greater Mysuru jurisdiction transition
+- MCC and surrounding municipal, town panchayat and gram panchayat authorities
+- Jurisdiction history and transition information
+- Location-based routing
+- Issue-category based routing
+- GeoJSON geographical boundary information
+- Structured authority and department information
 
-**Core flow:**
-1. `<Citizen does X>`
-2. `<System does Y>`
-3. `<Staff does Z>`
-4. `<Citizen sees outcome>`
-
-**Screenshots:** `<2–4 images under docs/images/, each < 1 MB>`
-
-## 4. Architecture
-
-`<One-sentence summary, e.g. "Offline-first PWA → REST API → PostgreSQL/PostGIS, with a rules-based routing service.">`
-
-➡️ Diagram, components, data model and APIs: **[docs/architecture.md](./docs/architecture.md)**
-
-## 5. Tech Stack & AI Usage
-
-**Stack:** `<React PWA · FastAPI · PostgreSQL + PostGIS · Render>` (full rationale in [docs/architecture.md](./docs/architecture.md#tech-stack))
-
-**AI tools used in development:** `<ChatGPT, Copilot, ...>`
-**AI inside the product:** `<e.g. YOLOv8 for bin detection / none>`
-
-➡️ Full disclosure: **[ai.md](./ai.md)**
-
-## 6. Decision Log (Summary)
-
-<!-- The full 1-page Decision Log is a PDF on Google Drive, linked in resource.md. ≤ 3 lines here. -->
-
-- **Chose:** `<approach>`, **over:** `<rejected alternative>`
-- **Because:** `<the trade-off in one line>`
-- **First thing to break at city scale:** `<one line>`
-
-➡️ Full decision log: **[resource.md](./resource.md#4-submission-artifacts-google-drive)** · Template: **[decision-log-template.md](./resource-templates/decision-log-template.md)**
-
-## 7. Setup & Run
-
-```bash
-git clone <repo-url> && cd <repo>
-<one-line install> && <one-line run>
-```
-
-➡️ Prerequisites, environment variables, seed data and offline testing: **[docs/setup.md](./docs/setup.md)**
-
-## 8. Known Limitations
-
-- `<Top limitation 1>`
-- `<Top limitation 2>`
-- `<Top limitation 3>`
-
-➡️ Full list, edge cases and scaling roadmap: **[docs/limitations.md](./docs/limitations.md)**
+The system is designed so that jurisdiction information can be updated as the administrative transition progresses.
 
 ---
 
-## Team
+## 3. Solution Overview
 
-| Name | Role | GitHub |
-|---|---|---|
-| `<...>` | `<...>` | `@<...>` |
+**SAMAGRA MYSURU** is a location-based civic complaint routing solution for Mysuru.
 
-## License
+The system combines a complaint's location with its issue type to identify the applicable jurisdiction, responsible authority and relevant department. It uses structured 2026 Mysuru jurisdiction data, geographical boundary information and routing rules to support consistent complaint routing.
 
-`<MIT / Apache-2.0 / None>`. You retain full ownership of your code.
+### Core flow
+
+**Citizen does X**
+
+The citizen submits a civic complaint with its location and issue type.
+
+**System does Y**
+
+The system identifies the geographical jurisdiction, determines the current operating authority and maps the issue to the appropriate department using routing rules.
+
+**Staff does Z**
+
+The responsible authority and department can use the routed complaint information for further action.
+
+**Citizen sees outcome**
+
+The citizen receives a clear indication of where the complaint has been routed.
+
+### Main project components
+
+- 2026 Mysuru jurisdiction database
+- 65 MCC ward data
+- Jurisdiction and locality information
+- GeoJSON boundary data
+- Authority and department mapping
+- Issue categories
+- Routing rules
+- Jurisdiction history
+- Complaint and routing-log structures
+
+---
+
+## 4. Architecture
+
+SAMAGRA MYSURU uses geographical boundary data together with a structured MySQL routing database to map a civic complaint to its applicable jurisdiction, authority and department.
+
+### Routing flow
+
+```text
+Citizen Complaint
+       |
+       v
+Location + Issue Type
+       |
+       v
+Geographical Jurisdiction
+       |
+       v
+Current Operating Authority
+       |
+       v
+Issue Category
+       |
+       v
+Responsible Department
+       |
+       v
+Routing Rule
+       |
+       v
+Final Routing Result
