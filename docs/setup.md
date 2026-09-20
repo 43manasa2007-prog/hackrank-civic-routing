@@ -1,65 +1,60 @@
-# Backend setup: FastAPI + MySQL
+# Setup & Run Instructions
 
-## 1. Create the local environment file
+[← Back to README](../README.md)
 
-Copy `.env.example` to `.env` in the **project root** (`hackrank-civic-routing/.env`).
+<!-- A reviewer should get this running in under 10 minutes if the live link is down. -->
 
-Use the password you set for the MySQL user `civic_app` in MySQL Workbench.
+## Prerequisites
 
-Example:
+| Tool | Version |
+|---|---|
+| `<Node.js / Python / Docker>` | `<20.x / 3.11 / 24+>` |
 
-```text
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_USER=civic_app
-DB_PASSWORD=YOUR_CIVIC_APP_PASSWORD
-DB_NAME=hackmysuru_civic_routing
+## 1. Clone
+
+```bash
+git clone <repo-url>
+cd <repo>
 ```
 
-Do **not** commit `.env`. It is already ignored by `.gitignore`.
+## 2. Environment Variables
 
-## 2. Install backend dependencies
-
-From the project root:
-
-```powershell
-python -m pip install -r requirements.txt
+```bash
+cp .env.example .env
 ```
 
-## 3. Test the MySQL connection from Python
+| Variable | Required | Example | Purpose |
+|---|---|---|---|
+| `DATABASE_URL` | Yes | `<...>` | `<...>` |
+| `<API_KEY>` | `<No>` | `<...>` | `<...>` |
 
-From the project root:
+> Never commit real secrets. Commit only `.env.example`.
 
-```powershell
-python -c "from src.db import get_db_connection; c=get_db_connection(); print('MYSQL CONNECTION SUCCESS'); c.close()"
+## 3. Install & Seed Demo Data
+
+```bash
+<install command>
+<migration command>
+<seed command>          # loads <N> sample complaints across <N> wards
 ```
 
-## 4. Run FastAPI
+## 4. Run
 
-From the project root:
-
-```powershell
-uvicorn src.main:app --reload
+```bash
+<run command>
 ```
 
-Then open:
+Open `http://localhost:<port>`. Test accounts are listed in [resource.md](../resource.md#5-live-mvp).
 
-```text
-http://127.0.0.1:8000/api/health/db
-```
+## Testing Offline Mode
 
-A successful response contains:
+1. `<Open the app and log in>`
+2. `<Chrome DevTools → Network → Offline, or phone airplane mode>`
+3. `<File a complaint → it shows "queued">`
+4. `<Go back online → it syncs and shows "submitted">`
 
-```json
-{
-  "status": "ok",
-  "database": "hackmysuru_civic_routing",
-  "mysql_user": "civic_app@localhost"
-}
-```
+## Troubleshooting
 
-## Important distinction
-
-The current routing engine in `src/routing/router.py` still uses the JSON files in `src/data/` for ward/jurisdiction matching. The `/api/health/db` endpoint proves that FastAPI is connected to the real MySQL database, but it does not silently replace the existing routing rules with database queries.
-
-To make `/api/complaints` read routing rules directly from the real MySQL tables, the exact column relationships of the live schema are needed; they should not be guessed.
+| Problem | Fix |
+|---|---|
+| `<Port already in use>` | `<...>` |
