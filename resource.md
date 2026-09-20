@@ -20,18 +20,18 @@ HOW TO FILL THIS FILE
 
 | Field | Value |
 |---|---|
-| Team ID (from dashboard) | `<HM1-XXXX>` |
-| Team Name | `<team name>` |
-| College(s) | `<college name(s)>` |
-| Team Leader | `<name>` · `<email>` · `<phone>` |
+| Team ID (from dashboard) | `HM26-1F8A` |
+| Team Name | `AI Tech` |
+| College(s) | `GSSSIETW` |
+| Team Leader | `Manasa M N` · `43manasa2007@gmail.com` · `8310583128` |
 | Repository | `<https://github.com/org-or-user/repo>` |
 
 | # | Member | Program & Year | GitHub Handle | Primary Role |
 |---|---|---|---|---|
-| 1 | `<name>` (Lead) | `<B.E. CSE, 3rd yr>` | `@<handle>` | `<backend / ML / frontend / ...>` |
-| 2 | `<name>` | `<...>` | `@<handle>` | `<...>` |
-| 3 | `<name>` | `<...>` | `@<handle>` | `<...>` |
-| 4 | `<name>` | `<...>` | `@<handle>` | `<...>` |
+| 1 | `Manasa M N` (Lead) | `BE CSE(AIML) & 2nd year` | `43manasa2007-prog` | `DATA BASE / PPT / DECISION LOG` |
+| 2 | `Sahana M Singad` | `BE CSE(AIML) & 2nd year` | `sahanasingad` | `Frontend` |
+| 3 | `Prerana L` | `BE CSE(AIML) & 2nd year` | `preranalokesh06-ai` | `Testing` |
+| 4 | `Sinchana` | `BE CSE(AIML) & 2nd year` | `sinchana532007-gif` | `Backend` |
 
 ---
 
