@@ -37,9 +37,9 @@ HOW TO FILL THIS FILE
 
 ## 2. What We Built (one-liner)
 
-**Sub-problem:** `<Routing | Follow-through | Visibility | Verification | Detection without reporting | Segregation drift | Hotspot pattern-finding | Field worker feedback loop | Own: ____>`
+**Sub-problem:** `Routing / Verification`
 
-**In one sentence:** `<e.g. "An offline-first reporting app that auto-routes complaints to MCC, town panchayat or gram panchayat using ward boundaries and issue type, with a confidence score for boundary cases.">`
+**In one sentence:** `We built and verified a full civic complaint routing system where citizen complaints with GPS locations are routed through FastAPI, stored in MySQL, and automatically delivered to the admin dashboard through real API integration.`
 
 ---
 
@@ -79,11 +79,9 @@ Paste the first 16 characters.
 | `00:00` | Part 1: Problem & target users |
 | `00:40` | Part 1: Live demo, core flow |
 | `01:50` | Part 1: Bad-input handling |
-| `02:30` | Part 1: Offline / airplane mode |
 | `03:00` | Part 2: Architecture overview |
 | `04:30` | Part 2: Data model & APIs |
 | `05:30` | Part 2: Key code walkthrough |
-| `07:30` | Part 2: Decisions & trade-offs |
 | `08:30` | Part 2: Scaling & limitations |
 | `09:15` | Part 2: AI usage (see [ai.md](./ai.md)) |
 
